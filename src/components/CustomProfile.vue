@@ -3,36 +3,14 @@
 </template>
       
 <script>
-import { use, graphic } from 'echarts/core';
-import { CanvasRenderer } from 'echarts/renderers';
-import { CustomChart } from 'echarts/charts';
-import {
-        TitleComponent,
-        TooltipComponent,
-        LegendComponent,
-        GridComponent,
-        DataZoomComponent,
-} from 'echarts/components';
-import VChart, { THEME_KEY } from 'vue-echarts';
+import { graphic } from 'echarts/core';
+import VChart from 'vue-echarts';
 import { defineComponent, ref } from 'vue';
-
-use([
-        CanvasRenderer,
-        CustomChart,
-        TitleComponent,
-        TooltipComponent,
-        LegendComponent,
-        GridComponent,
-        DataZoomComponent,
-]);
 
 export default defineComponent({
         name: 'CustomProfile',
         components: {
                 VChart,
-        },
-        provide: {
-                [THEME_KEY]: 'light',
         },
         setup() {
                 const data = [];
@@ -150,10 +128,3 @@ export default defineComponent({
         }
 })
 </script>
-      
-<style scoped>
-.chart {
-        height: calc(100vh - 50px);
-}
-</style>
-      
